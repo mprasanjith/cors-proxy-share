@@ -1,5 +1,5 @@
 // Change host appropriately if you run your own Sentry instance.
-const sentryHost = "sentry.io";
+const sentryHost = "o425302.ingest.sentry.io";
 
 // Set knownProjectIds to an array with your Sentry project IDs which you
 // want to accept through this proxy.
