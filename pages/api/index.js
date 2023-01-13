@@ -47,7 +47,9 @@ async function handler(req, res) {
     });
 
     // Relay response from Sentry servers to front end
-    sentryResponse.headers.forEach(([key, value]) => res.setHeader(key, value));
+    sentryResponse.headers.forEach((value, key) => {
+      res.setHeader(key, value);
+    });
     res.status(sentryResponse.status).send(sentryResponse.body);
   } catch (e) {
     console.error(e);
