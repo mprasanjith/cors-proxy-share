@@ -50,6 +50,7 @@ async function handler(req, res) {
     sentryResponse.headers.forEach(([key, value]) => res.setHeader(key, value));
     res.status(sentryResponse.status).send(sentryResponse.body);
   } catch (e) {
+    console.error(e);
     return res.status(400).json({ status: "invalid request" });
   }
 }
